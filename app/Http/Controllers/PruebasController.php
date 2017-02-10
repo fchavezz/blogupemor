@@ -22,12 +22,18 @@ class PruebasController extends Controller
      * @return \Illuminate\Http\Response
      *
      */
+
     public function index()
     {
+        return redirect('noticias');
+    }
+
+    public function note(){
         $pruebas = Prueba::all();
         return view('pruebas.index')->with(['pruebas'=>$pruebas]);
         //return \View::make('pruebas.index'); //Tambien sirve
     }
+
 
     /**
      * Show the form for creating a new resource.

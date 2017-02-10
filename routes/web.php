@@ -12,12 +12,19 @@
 */
 
 
+
+
+//Route::resource('prueba', 'PruebasController');
+Route::get('/', 'PruebasController@index');
 Route::resource('prueba', 'PruebasController');
+Route::get('noticias', 'PruebasController@note');
+
 Route::put('prueba/{id}', 'PruebasController@update');
 //Route::put('prueba/{id}', 'PruebasController@update');
 Route::get('/noticiaimagen/{filename}',[
     'uses'=>'PruebasController@getImagen',
     'as'=>'noticia.imagen'
 ]);
+
 
 
