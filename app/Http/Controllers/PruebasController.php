@@ -22,18 +22,20 @@ class PruebasController extends Controller
      * @return \Illuminate\Http\Response
      *
      */
-
     public function index()
     {
-        return redirect('noticias');
+
+        $pruebas = Prueba::all();
+        return view('noticias.index')->with(['pruebas'=>$pruebas]);
+
+//return redirect('noticias');
     }
 
-    public function note(){
+    /*public function note(){
         $pruebas = Prueba::all();
         return view('pruebas.index')->with(['pruebas'=>$pruebas]);
         //return \View::make('pruebas.index'); //Tambien sirve
-    }
-
+    } */
 
     /**
      * Show the form for creating a new resource.
@@ -42,7 +44,7 @@ class PruebasController extends Controller
      */
     public function create()
     {
-        return view('pruebas.create');
+        return view('noticias.create');
     }
 
     /**
@@ -92,7 +94,7 @@ class PruebasController extends Controller
     public function edit($id)
     {
         $prueba = Prueba::find($id);
-        return view('pruebas.index')->with(['edit'=>true,'prueba'=>$prueba]);
+        return view('noticias.index')->with(['edit'=>true,'prueba'=>$prueba]);
     }
 
     /**
@@ -126,7 +128,7 @@ class PruebasController extends Controller
      */
     public function destroy($id)
     {
-            Prueba::destroy($id);
-            return back();
+        Prueba::destroy($id);
+        return back();
     }
 }

@@ -22,7 +22,7 @@
                             <input type="text" class="hide" name="img" value="{{$p->url}}">
                             <input type="submit" class="btn btn-danger" value="Eliminar">
                         </form></td>
-                    </tr>
+                </tr>
 
             @endforeach
             </tbody>
